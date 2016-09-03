@@ -8,7 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
 
-namespace ReactVS
+namespace ReactVS.Web
 {
     public class Global : HttpApplication
     {

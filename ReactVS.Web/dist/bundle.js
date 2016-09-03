@@ -55,8 +55,8 @@
 	const index_1 = __webpack_require__(96);
 	const home_1 = __webpack_require__(376);
 	const about_1 = __webpack_require__(377);
-	const help_1 = __webpack_require__(378);
-	const component_1 = __webpack_require__(379);
+	const help_1 = __webpack_require__(379);
+	const component_1 = __webpack_require__(380);
 	const reducers = redux_1.combineReducers({
 	    students: index_1.students,
 	});
@@ -7682,11 +7682,10 @@
 
 	"use strict";
 	const axios = __webpack_require__(98);
-	const globals_1 = __webpack_require__(120);
+	const config_1 = __webpack_require__(120);
 	function fetchStudents() {
 	    return function (dispatch) {
-	        console.log('BASE API' + globals_1.config.baseApiUrl);
-	        return axios.get(globals_1.config.baseApiUrl + '/api/students')
+	        return axios.get(config_1.config.baseApiUrl + '/api/students')
 	            .then(function (response) {
 	            dispatch(exports.receiveStudents(response.data));
 	        });
@@ -7696,7 +7695,7 @@
 	function addStudent(name) {
 	    return function (dispatch) {
 	        const aryName = name.split(' ');
-	        return axios.post('http://localhost:63468/api/students', { "FirstName": aryName[0], "LastName": aryName[1] })
+	        return axios.post(config_1.config.baseApiUrl + '/api/students', { "FirstName": aryName[0], "LastName": aryName[1] })
 	            .then(function (response) {
 	            dispatch(fetchStudents());
 	            dispatch(exports.studentAdded());
@@ -28000,9 +27999,10 @@
 
 	"use strict";
 	const React = __webpack_require__(1);
+	const component_1 = __webpack_require__(378);
 	class AboutView extends React.Component {
 	    render() {
-	        return React.createElement("div", null, React.createElement("h1", null, "About Us"), this.props.children);
+	        return React.createElement("div", null, React.createElement("h1", null, "About Us"), React.createElement(component_1.LoginForm, null), this.props.children);
 	    }
 	}
 	exports.AboutView = AboutView;
@@ -28010,6 +28010,21 @@
 
 /***/ },
 /* 378 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	const React = __webpack_require__(1);
+	const react_bootstrap_1 = __webpack_require__(122);
+	class LoginForm extends React.Component {
+	    render() {
+	        return React.createElement("div", null, React.createElement(react_bootstrap_1.Form, {horizontal: true}, React.createElement(react_bootstrap_1.FormGroup, {controlId: "formHorizontalEmail"}, React.createElement(react_bootstrap_1.Col, {componentClass: "na", sm: 2}, "Email"), React.createElement(react_bootstrap_1.Col, {sm: 10}, React.createElement(react_bootstrap_1.FormControl, {type: "email", placeholder: "Email"}))), React.createElement(react_bootstrap_1.FormGroup, {controlId: "formHorizontalPassword"}, React.createElement(react_bootstrap_1.Col, {componentClass: "na", sm: 2}, "Password"), React.createElement(react_bootstrap_1.Col, {sm: 10}, React.createElement(react_bootstrap_1.FormControl, {type: "password", placeholder: "Password"}))), React.createElement(react_bootstrap_1.FormGroup, null, React.createElement(react_bootstrap_1.Col, {smOffset: 2, sm: 10}, React.createElement(react_bootstrap_1.Button, {type: "submit"}, "Sign in")))));
+	    }
+	}
+	exports.LoginForm = LoginForm;
+
+
+/***/ },
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28023,7 +28038,7 @@
 
 
 /***/ },
-/* 379 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

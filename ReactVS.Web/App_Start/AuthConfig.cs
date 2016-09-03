@@ -6,9 +6,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.AspNet.Identity;
 using System.Security.Claims;
 
-[assembly: OwinStartup(typeof(ReactVS.App_Start.AuthConfig))]
+[assembly: OwinStartup(typeof(ReactVS.Web.App_Start.AuthConfig))]
 
-namespace ReactVS.App_Start
+namespace ReactVS.Web.App_Start
 {
     public class AuthConfig
     {

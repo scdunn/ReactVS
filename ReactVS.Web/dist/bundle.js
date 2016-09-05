@@ -56,7 +56,8 @@
 	const home_1 = __webpack_require__(376);
 	const about_1 = __webpack_require__(377);
 	const help_1 = __webpack_require__(379);
-	const component_1 = __webpack_require__(380);
+	const login_1 = __webpack_require__(380);
+	const component_1 = __webpack_require__(381);
 	const reducers = redux_1.combineReducers({
 	    students: index_1.students,
 	});
@@ -65,7 +66,7 @@
 	window.addEventListener('DOMContentLoaded', () => {
 	    const rootEl = document.getElementById('root');
 	    if (rootEl)
-	        ReactDOM.render(React.createElement(react_redux_1.Provider, {store: store}, React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, React.createElement(react_router_1.Route, {path: "/", component: component_1.App}, React.createElement(react_router_1.IndexRoute, {component: home_1.HomeView}), React.createElement(react_router_1.Route, {path: "/about", component: about_1.AboutView}), React.createElement(react_router_1.Route, {path: "/help", component: help_1.HelpView})))), rootEl);
+	        ReactDOM.render(React.createElement(react_redux_1.Provider, {store: store}, React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, React.createElement(react_router_1.Route, {path: "/", component: component_1.App}, React.createElement(react_router_1.IndexRoute, {component: home_1.HomeView}), React.createElement(react_router_1.Route, {path: "/about", component: about_1.AboutView}), React.createElement(react_router_1.Route, {path: "/help", component: help_1.HelpView}), React.createElement(react_router_1.Route, {path: "/login", component: login_1.LoginView})))), rootEl);
 	});
 
 
@@ -28016,6 +28017,10 @@
 	const React = __webpack_require__(1);
 	const react_bootstrap_1 = __webpack_require__(122);
 	class LoginForm extends React.Component {
+	    constructor(...args) {
+	        super(...args);
+	        this.onLoginClick = (event) => { alert('Saved'); };
+	    }
 	    render() {
 	        return React.createElement("div", null, React.createElement(react_bootstrap_1.Form, {horizontal: true}, React.createElement(react_bootstrap_1.FormGroup, {controlId: "formHorizontalEmail"}, React.createElement(react_bootstrap_1.Col, {componentClass: "na", sm: 2}, "Email"), React.createElement(react_bootstrap_1.Col, {sm: 10}, React.createElement(react_bootstrap_1.FormControl, {type: "email", placeholder: "Email"}))), React.createElement(react_bootstrap_1.FormGroup, {controlId: "formHorizontalPassword"}, React.createElement(react_bootstrap_1.Col, {componentClass: "na", sm: 2}, "Password"), React.createElement(react_bootstrap_1.Col, {sm: 10}, React.createElement(react_bootstrap_1.FormControl, {type: "password", placeholder: "Password"}))), React.createElement(react_bootstrap_1.FormGroup, null, React.createElement(react_bootstrap_1.Col, {smOffset: 2, sm: 10}, React.createElement(react_bootstrap_1.Button, {type: "submit"}, "Sign in")))));
 	    }
@@ -28043,6 +28048,21 @@
 
 	"use strict";
 	const React = __webpack_require__(1);
+	const component_1 = __webpack_require__(378);
+	class LoginView extends React.Component {
+	    render() {
+	        return React.createElement("div", null, React.createElement("h1", null, "About Us"), React.createElement(component_1.LoginForm, null), this.props.children);
+	    }
+	}
+	exports.LoginView = LoginView;
+
+
+/***/ },
+/* 381 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	const React = __webpack_require__(1);
 	const react_bootstrap_1 = __webpack_require__(122);
 	const react_router_1 = __webpack_require__(32);
 	class App extends React.Component {
@@ -28050,7 +28070,7 @@
 	        react_router_1.browserHistory.push(selectedKey);
 	    }
 	    render() {
-	        return React.createElement("div", null, React.createElement(react_bootstrap_1.Navbar, null, React.createElement(react_bootstrap_1.Navbar.Header, null, React.createElement(react_bootstrap_1.Navbar.Brand, null, React.createElement(react_router_1.Link, {to: "/about"}, "Student List"))), React.createElement(react_bootstrap_1.Nav, {onSelect: this.handleSelect}, React.createElement(react_bootstrap_1.NavItem, {eventKey: '/'}, "Home"), React.createElement(react_bootstrap_1.NavItem, {eventKey: '/about'}, "About"), React.createElement(react_bootstrap_1.NavItem, {eventKey: '/help'}, "Help"), React.createElement(react_bootstrap_1.NavDropdown, {eventKey: 3, title: "Dropdown", id: "basic-nav-dropdown"}, React.createElement(react_bootstrap_1.MenuItem, {eventKey: 3.1}, "Action"), React.createElement(react_bootstrap_1.MenuItem, {eventKey: 3.2}, "Another action"), React.createElement(react_bootstrap_1.MenuItem, {eventKey: 3.3}, "Something else here"), React.createElement(react_bootstrap_1.MenuItem, {divider: true}), React.createElement(react_bootstrap_1.MenuItem, {eventKey: 3.3}, "Separated link")))), this.props.children);
+	        return React.createElement("div", null, React.createElement(react_bootstrap_1.Navbar, null, React.createElement(react_bootstrap_1.Navbar.Header, null, React.createElement(react_bootstrap_1.Navbar.Brand, null, React.createElement(react_router_1.Link, {to: "/about"}, "Student List"))), React.createElement(react_bootstrap_1.Nav, {onSelect: this.handleSelect}, React.createElement(react_bootstrap_1.NavItem, {eventKey: '/'}, "Home"), React.createElement(react_bootstrap_1.NavItem, {eventKey: '/about'}, "About"), React.createElement(react_bootstrap_1.NavItem, {eventKey: '/help'}, "Help"), React.createElement(react_bootstrap_1.NavItem, {eventKey: '/login'}, "Login"), React.createElement(react_bootstrap_1.NavDropdown, {eventKey: 3, title: "Dropdown", id: "basic-nav-dropdown"}, React.createElement(react_bootstrap_1.MenuItem, {eventKey: 3.1}, "Action"), React.createElement(react_bootstrap_1.MenuItem, {eventKey: 3.2}, "Another action"), React.createElement(react_bootstrap_1.MenuItem, {eventKey: 3.3}, "Something else here"), React.createElement(react_bootstrap_1.MenuItem, {divider: true}), React.createElement(react_bootstrap_1.MenuItem, {eventKey: 3.3}, "Separated link")))), this.props.children);
 	    }
 	}
 	exports.App = App;

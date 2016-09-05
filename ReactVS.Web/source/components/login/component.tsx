@@ -11,6 +11,10 @@ interface MyState { }
 
 
 export class LoginForm extends React.Component<MyProps, MyState> {
+
+    onLoginClick = (event: any) => { alert('Saved'); }
+
+
     render() {
         return <div>
 

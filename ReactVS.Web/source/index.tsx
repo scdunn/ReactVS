@@ -12,6 +12,7 @@ import { students } from './components/studentlist/index'
 import { HomeView } from './views/home'
 import { AboutView } from './views/about'
 import { HelpView } from './views/help'
+import { LoginView } from './views/login'
 import { App } from './components/app/component'
 
 
@@ -31,7 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
                   <IndexRoute component={HomeView} />
                   <Route path="/about" component={AboutView}/>
                   <Route path="/help" component={HelpView}/>
-               
+                  <Route path="/login" component={LoginView}/>
               </Route>
          </Router>
       </Provider>

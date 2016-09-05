@@ -8,7 +8,7 @@ gulp.task('webpack', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./source/**/*.tsx', ['webpack']);
+    gulp.watch(['./source/**/*.tsx', './source/**/*.ts', './source/**/*.js'], ['webpack']);
 
 
 });

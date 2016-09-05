@@ -28,6 +28,7 @@ export class App extends React.Component<MyProps, MyState> {
                 <NavItem eventKey={'/'}>Home</NavItem>
                 <NavItem eventKey={'/about'}>About</NavItem>
                 <NavItem eventKey={'/help'}>Help</NavItem>
+                <NavItem eventKey={'/login'}>Login</NavItem>
                 <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
                     <MenuItem eventKey={3.1}>Action</MenuItem>
                     <MenuItem eventKey={3.2}>Another action</MenuItem>

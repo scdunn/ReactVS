@@ -198,6 +198,7 @@
     <TypeScriptCompile Include="source\views\about.tsx" />
     <TypeScriptCompile Include="source\views\help.tsx" />
     <TypeScriptCompile Include="source\views\home.tsx" />
+    <TypeScriptCompile Include="source\views\login.tsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

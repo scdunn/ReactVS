@@ -8,6 +8,25 @@ namespace ReactVS.Core.Data
     using System.Data.Entity.ModelConfiguration;
 
 
+    public class ClassifiedAdsConfiguration : EntityTypeConfiguration<ClassifiedAd>
+    {
+        public ClassifiedAdsConfiguration()
+        {
+
+            HasKey(p => p.Id);
+
+            Property(p => p.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
+                .IsRequired();
+
+            Property(p => p.Title);
+            Property(p => p.Price);
+
+            ToTable("ClassifiedAds");
+
+        }
+    }
+
     public class StudentConfiguration: EntityTypeConfiguration<Student>
     {
         public StudentConfiguration()
@@ -57,6 +76,7 @@ namespace ReactVS.Core.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new ClassifiedAdsConfiguration());
             modelBuilder.Configurations.Add(new StudentConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
             base.OnModelCreating(modelBuilder);

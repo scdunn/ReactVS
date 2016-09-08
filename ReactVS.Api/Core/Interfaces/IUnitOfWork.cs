@@ -7,6 +7,7 @@ namespace ReactVS.Core.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
+        IClassifiedAdsRepository ClassifiedAds { get; }
         IStudentRepository Students { get; }
         IUserRepository Users { get; }
         int Complete();

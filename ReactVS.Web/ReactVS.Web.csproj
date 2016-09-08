@@ -186,19 +186,26 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="source\components\app\component.tsx" />
-    <TypeScriptCompile Include="source\components\login\component.tsx" />
-    <TypeScriptCompile Include="source\components\studentlist\actions.ts" />
-    <TypeScriptCompile Include="source\components\studentlist\component.tsx" />
-    <TypeScriptCompile Include="source\components\studentlist\index.ts" />
-    <TypeScriptCompile Include="source\components\studentlist\reducer.ts" />
+    <TypeScriptCompile Include="odl\ads-container.tsx" />
+    <TypeScriptCompile Include="odl\ads-view.tsx" />
+    <TypeScriptCompile Include="source\features\ads\container.tsx" />
+    <TypeScriptCompile Include="source\features\ads\index.tsx" />
+    <TypeScriptCompile Include="source\features\about\about-view.tsx" />
+    <TypeScriptCompile Include="source\features\about\index.ts" />
+    <TypeScriptCompile Include="source\features\ads\view.tsx" />
+    <TypeScriptCompile Include="source\features\app\component.tsx" />
+    <TypeScriptCompile Include="source\features\login\login-view.tsx" />
+    <TypeScriptCompile Include="source\features\home\home-container.tsx" />
+    <TypeScriptCompile Include="source\features\home\index.ts" />
     <TypeScriptCompile Include="source\index.tsx" />
+    <TypeScriptCompile Include="source\router.tsx" />
+    <TypeScriptCompile Include="source\shared\actions.ts" />
     <TypeScriptCompile Include="source\shared\config.ts" />
     <TypeScriptCompile Include="source\shared\store.ts" />
-    <TypeScriptCompile Include="source\views\about.tsx" />
-    <TypeScriptCompile Include="source\views\help.tsx" />
-    <TypeScriptCompile Include="source\views\home.tsx" />
-    <TypeScriptCompile Include="source\views\login.tsx" />
+    <TypeScriptCompile Include="source\features\about\about-container.tsx" />
+    <TypeScriptCompile Include="source\features\help\help-container.tsx" />
+    <TypeScriptCompile Include="source\features\home\home-view.tsx" />
+    <TypeScriptCompile Include="source\features\login\login-container.tsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

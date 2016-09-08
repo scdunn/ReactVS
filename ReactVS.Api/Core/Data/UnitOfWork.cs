@@ -15,9 +15,12 @@ namespace ReactVS.Core.Data
         public UnitOfWork(DataContext context)
         {
             _context = context;
+            ClassifiedAds = new ClassifiedAdsRepository(_context);
             Students = new StudentRepository(_context);
             Users = new UserRepository(_context);
         }
+
+        public IClassifiedAdsRepository ClassifiedAds { get; private set; }
 
         public IStudentRepository Students { get; private set; }
         public IUserRepository Users { get; private set; }
